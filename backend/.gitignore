@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+diairis.db
+.env
+dr_model.keras
