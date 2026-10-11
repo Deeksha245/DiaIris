@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import diairisLogo from '../assets/diairis-logo.png'
+
 
 function About() {
   const [activeLayer, setActiveLayer] = useState('Retina')
@@ -23,45 +25,46 @@ function About() {
           HERO
       ===================================================== */}
 
-      <section className="about-hero">
+<section className="about-hero">
+  <div className="about-hero-content">
+    <span className="about-eyebrow">
+      UNDERSTANDING DIABETIC RETINOPATHY
+    </span>
 
-        <div className="about-hero-content">
-          <span className="about-eyebrow">
-            UNDERSTANDING DIABETIC RETINOPATHY
-          </span>
+    <h1>
+      Know the disease.
+      <br />
+      <span>Protect your vision.</span>
+    </h1>
 
-          <h1>
-            Know the disease.
-            <br />
-            <span>Protect your vision.</span>
-          </h1>
+    <p>
+      Diabetic retinopathy is a diabetes-related eye condition
+      that can damage the blood vessels of the retina and may
+      lead to vision loss when it progresses.
+    </p>
 
-          <p>
-            Diabetic retinopathy is a diabetes-related eye condition
-            that can damage the blood vessels of the retina and may
-            lead to vision loss when it progresses.
-          </p>
+    <div className="about-hero-points">
+      <span>Retinal health</span>
+      <span>Early screening</span>
+      <span>Prevention</span>
+    </div>
+  </div>
 
-          <div className="about-hero-points">
-            <span>Retinal health</span>
-            <span>Early screening</span>
-            <span>Prevention</span>
-          </div>
-        </div>
+  <div className="about-hero-visual">
+    <img
+      src={diairisLogo}
+      alt="DIAIRIS - Retinal Health"
+      className="about-retinal-logo"
+    />
 
-        <div className="about-hero-visual">
-          <img
-            src="/src/assets/hero.png"
-            alt="Retinal screening visualization"
-          />
+    <div className="about-image-label">
+      <span></span>
+      RETINAL HEALTH
+    </div>
+  </div>
+</section>
 
-          <div className="about-image-label">
-            <span></span>
-            RETINAL HEALTH
-          </div>
-        </div>
 
-      </section>
 
 
       {/* =====================================================

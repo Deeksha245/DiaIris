@@ -21,6 +21,10 @@ function Login() {
     try {
       const data = await login(email, password)
 
+console.log("LOGIN RESPONSE:", data)
+console.log("TOKEN:", data.token)
+console.log("USER:", data.user)
+
       loginUser(data.token, data.user)
 
       navigate('/detection')

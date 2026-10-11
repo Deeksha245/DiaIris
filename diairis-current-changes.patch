@@ -1,0 +1,2618 @@
+diff --git a/src/App.css b/src/App.css
+index e1f2547..9816798 100644
+--- a/src/App.css
++++ b/src/App.css
+@@ -28557,1717 +28557,4 @@ td {
+     align-items: flex-start;
+   }
+ }
+-/* ============================================================
+-   DIAIRIS — FINAL UNIFIED MEDICAL UI
+-   ADD BELOW EXISTING CSS — DO NOT DELETE ABOVE
+-============================================================ */
+ 
+-:root {
+-  --dia-bg: #020617;
+-  --dia-surface: #0b1220;
+-  --dia-card: #0f172a;
+-  --dia-card-soft: #111c2d;
+-  --dia-border: #1e293b;
+-  --dia-border-light: #263449;
+-
+-  --dia-cyan: #22d3ee;
+-  --dia-cyan-dark: #0891b2;
+-  --dia-teal: #0e7490;
+-
+-  --dia-text: #f8fafc;
+-  --dia-text-soft: #cbd5e1;
+-  --dia-muted: #94a3b8;
+-  --dia-dim: #64748b;
+-
+-  --dia-success: #22c55e;
+-  --dia-danger: #ef4444;
+-  --dia-warning: #f59e0b;
+-
+-  --dia-radius: 16px;
+-  --dia-radius-small: 10px;
+-
+-  --dia-shadow:
+-    0 12px 35px rgba(0, 0, 0, 0.22);
+-}
+-
+-
+-/* ============================================================
+-   GLOBAL
+-============================================================ */
+-
+-html {
+-  background: var(--dia-bg);
+-  scroll-behavior: smooth;
+-}
+-
+-body {
+-  background:
+-    radial-gradient(
+-      circle at 80% 0%,
+-      rgba(14, 116, 144, 0.08),
+-      transparent 30%
+-    ),
+-    var(--dia-bg) !important;
+-
+-  color: var(--dia-text) !important;
+-  min-height: 100vh;
+-}
+-
+-#root {
+-  width: 100%;
+-  min-height: 100vh;
+-}
+-
+-button,
+-input,
+-select,
+-textarea {
+-  font-family: inherit;
+-}
+-
+-button {
+-  cursor: pointer;
+-}
+-
+-a {
+-  color: inherit;
+-}
+-
+-
+-/* ============================================================
+-   NAVBAR
+-============================================================ */
+-
+-nav,
+-.navbar {
+-  background: rgba(2, 6, 23, 0.94) !important;
+-  border-bottom: 1px solid var(--dia-border) !important;
+-  backdrop-filter: blur(16px);
+-}
+-
+-.navbar a,
+-nav a {
+-  transition: 0.2s ease;
+-}
+-
+-.navbar a:hover,
+-nav a:hover {
+-  color: var(--dia-cyan) !important;
+-}
+-
+-
+-/* ============================================================
+-   COMMON PAGE CONTAINER
+-============================================================ */
+-
+-.diairis-dashboard,
+-.detection-page,
+-.history-page,
+-.medications-page,
+-.about-page,
+-.profile-page,
+-.appointments-page,
+-.doctor-page {
+-  width: min(1180px, calc(100% - 48px));
+-  margin: 0 auto;
+-  padding: 36px 0 70px;
+-}
+-
+-
+-/* ============================================================
+-   COMMON HEADINGS
+-============================================================ */
+-
+-.diairis-dashboard h1,
+-.diairis-dashboard h2,
+-.diairis-dashboard h3,
+-.detection-page h1,
+-.detection-page h2,
+-.history-page h1,
+-.history-page h2,
+-.medications-page h1,
+-.medications-page h2,
+-.about-page h1,
+-.about-page h2,
+-.profile-page h1,
+-.profile-page h2,
+-.appointments-page h1,
+-.appointments-page h2 {
+-  color: var(--dia-text) !important;
+-}
+-
+-.diairis-dashboard p,
+-.detection-page p,
+-.history-page p,
+-.medications-page p,
+-.about-page p,
+-.profile-page p,
+-.appointments-page p {
+-  color: var(--dia-muted);
+-}
+-
+-
+-/* ============================================================
+-   SECTION LABELS
+-============================================================ */
+-
+-.dashboard-kicker,
+-.profile-label,
+-.appointments-label,
+-.doctor-label {
+-  color: var(--dia-cyan) !important;
+-  font-size: 12px !important;
+-  font-weight: 800 !important;
+-  letter-spacing: 2px !important;
+-  text-transform: uppercase;
+-}
+-
+-
+-/* ============================================================
+-   DASHBOARD HERO
+-============================================================ */
+-
+-.dashboard-hero {
+-  position: relative;
+-  display: grid;
+-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+-  gap: 42px;
+-
+-  min-height: 430px;
+-
+-  padding: 52px;
+-  margin-bottom: 42px;
+-
+-  background:
+-    radial-gradient(
+-      circle at 85% 45%,
+-      rgba(34, 211, 238, 0.12),
+-      transparent 35%
+-    ),
+-    linear-gradient(
+-      135deg,
+-      #0b1220,
+-      #0f172a
+-    );
+-
+-  border: 1px solid var(--dia-border);
+-  border-radius: 24px;
+-
+-  overflow: hidden;
+-  box-shadow: var(--dia-shadow);
+-}
+-
+-.dashboard-hero::before {
+-  content: "";
+-  position: absolute;
+-  inset: 0;
+-
+-  background:
+-    linear-gradient(
+-      120deg,
+-      transparent 30%,
+-      rgba(34, 211, 238, 0.035),
+-      transparent 70%
+-    );
+-
+-  pointer-events: none;
+-}
+-
+-.hero-left {
+-  position: relative;
+-  z-index: 2;
+-  display: flex;
+-  flex-direction: column;
+-  justify-content: center;
+-}
+-
+-.hero-left h1 {
+-  max-width: 720px;
+-  margin: 12px 0 18px;
+-
+-  font-size: clamp(38px, 5vw, 64px);
+-  line-height: 1.04;
+-  letter-spacing: -2px;
+-}
+-
+-.hero-description {
+-  max-width: 650px;
+-  color: var(--dia-muted) !important;
+-  font-size: 16px;
+-  line-height: 1.8;
+-}
+-
+-.hero-buttons {
+-  display: flex;
+-  flex-wrap: wrap;
+-  gap: 12px;
+-  margin-top: 28px;
+-}
+-
+-.hero-primary,
+-.hero-secondary,
+-.final-screen-btn {
+-  display: inline-flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  min-height: 46px;
+-  padding: 0 20px;
+-
+-  border-radius: 10px;
+-  text-decoration: none;
+-
+-  font-size: 14px;
+-  font-weight: 800;
+-
+-  transition: 0.2s ease;
+-}
+-
+-.hero-primary,
+-.final-screen-btn {
+-  background: var(--dia-cyan-dark);
+-  color: white !important;
+-  border: 1px solid var(--dia-cyan-dark);
+-}
+-
+-.hero-primary:hover,
+-.final-screen-btn:hover {
+-  background: var(--dia-teal);
+-  transform: translateY(-2px);
+-}
+-
+-.hero-secondary {
+-  background: rgba(15, 23, 42, 0.7);
+-  border: 1px solid var(--dia-border-light);
+-  color: var(--dia-text) !important;
+-}
+-
+-.hero-secondary:hover {
+-  border-color: var(--dia-cyan);
+-  color: var(--dia-cyan) !important;
+-}
+-
+-.hero-date {
+-  margin-top: 20px;
+-  color: var(--dia-dim) !important;
+-  font-size: 13px;
+-}
+-
+-
+-/* ============================================================
+-   RETINA VISUAL
+-============================================================ */
+-
+-.hero-retina,
+-.retina-visual {
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  min-height: 320px;
+-  position: relative;
+-}
+-
+-.retina-glow {
+-  position: absolute;
+-
+-  width: 270px;
+-  height: 270px;
+-
+-  border-radius: 50%;
+-
+-  background:
+-    radial-gradient(
+-      circle,
+-      rgba(34, 211, 238, 0.22),
+-      rgba(14, 116, 144, 0.08) 45%,
+-      transparent 70%
+-    );
+-
+-  filter: blur(4px);
+-}
+-
+-.retina-core {
+-  position: relative;
+-
+-  width: 210px;
+-  height: 210px;
+-
+-  border-radius: 50%;
+-
+-  background:
+-    radial-gradient(
+-      circle at 50% 50%,
+-      #ef4444 0 7%,
+-      #991b1b 8% 18%,
+-      #7f1d1d 19% 32%,
+-      #450a0a 33% 62%,
+-      #1f2937 63% 100%
+-    );
+-
+-  border: 5px solid rgba(34, 211, 238, 0.65);
+-
+-  box-shadow:
+-    0 0 35px rgba(34, 211, 238, 0.28),
+-    inset 0 0 40px rgba(0, 0, 0, 0.5);
+-}
+-
+-.retina-vessel {
+-  position: absolute;
+-  height: 2px;
+-  background: rgba(248, 113, 113, 0.8);
+-  transform-origin: left center;
+-}
+-
+-.vessel-one {
+-  width: 90px;
+-  top: 98px;
+-  left: 104px;
+-  transform: rotate(25deg);
+-}
+-
+-.vessel-two {
+-  width: 75px;
+-  top: 106px;
+-  left: 105px;
+-  transform: rotate(-35deg);
+-}
+-
+-.vessel-three {
+-  width: 70px;
+-  top: 110px;
+-  left: 105px;
+-  transform: rotate(150deg);
+-}
+-
+-.retina-scan {
+-  position: absolute;
+-
+-  width: 230px;
+-  height: 2px;
+-
+-  background: var(--dia-cyan);
+-
+-  box-shadow:
+-    0 0 14px rgba(34, 211, 238, 0.9);
+-
+-  animation: retinaScan 3s ease-in-out infinite;
+-}
+-
+-@keyframes retinaScan {
+-  0%,
+-  100% {
+-    transform: translateY(-90px);
+-    opacity: 0.25;
+-  }
+-
+-  50% {
+-    transform: translateY(90px);
+-    opacity: 1;
+-  }
+-}
+-
+-
+-/* ============================================================
+-   DASHBOARD SECTIONS
+-============================================================ */
+-
+-.dashboard-section {
+-  margin-bottom: 44px;
+-}
+-
+-.section-title {
+-  display: flex;
+-  align-items: flex-end;
+-  justify-content: space-between;
+-
+-  margin-bottom: 18px;
+-}
+-
+-.section-title h2 {
+-  margin: 0;
+-  font-size: 25px;
+-  letter-spacing: -0.5px;
+-}
+-
+-.section-title p {
+-  margin-top: 5px;
+-  color: var(--dia-dim) !important;
+-  font-size: 13px;
+-}
+-
+-
+-/* ============================================================
+-   OVERVIEW CARDS
+-============================================================ */
+-
+-.overview-grid {
+-  display: grid;
+-  grid-template-columns: repeat(4, 1fr);
+-  gap: 16px;
+-}
+-
+-.overview-card {
+-  position: relative;
+-
+-  min-height: 145px;
+-  padding: 22px;
+-
+-  background: var(--dia-card);
+-  border: 1px solid var(--dia-border);
+-  border-radius: var(--dia-radius);
+-
+-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+-
+-  transition:
+-    transform 0.2s ease,
+-    border-color 0.2s ease;
+-}
+-
+-.overview-card:hover {
+-  transform: translateY(-3px);
+-  border-color: rgba(34, 211, 238, 0.45);
+-}
+-
+-.overview-card h3 {
+-  margin: 8px 0;
+-  font-size: 26px;
+-}
+-
+-.overview-card p {
+-  color: var(--dia-muted);
+-  font-size: 13px;
+-}
+-
+-.overview-card small {
+-  color: var(--dia-dim);
+-}
+-
+-
+-/* ============================================================
+-   WORKFLOW
+-============================================================ */
+-
+-.workflow-grid {
+-  display: grid;
+-  grid-template-columns: repeat(3, 1fr);
+-  gap: 18px;
+-}
+-
+-.workflow-card {
+-  padding: 24px;
+-
+-  background: var(--dia-card);
+-  border: 1px solid var(--dia-border);
+-  border-radius: var(--dia-radius);
+-
+-  min-height: 170px;
+-}
+-
+-.workflow-number {
+-  display: inline-flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  width: 34px;
+-  height: 34px;
+-
+-  margin-bottom: 18px;
+-
+-  border-radius: 50%;
+-
+-  background: rgba(34, 211, 238, 0.1);
+-  color: var(--dia-cyan);
+-
+-  font-size: 13px;
+-  font-weight: 800;
+-}
+-
+-.workflow-card h3 {
+-  margin-bottom: 8px;
+-}
+-
+-.workflow-card p {
+-  color: var(--dia-muted);
+-  font-size: 13px;
+-  line-height: 1.7;
+-}
+-
+-
+-/* ============================================================
+-   AI OVERVIEW
+-============================================================ */
+-
+-.ai-overview {
+-  display: grid;
+-  grid-template-columns: 300px 1fr;
+-  gap: 34px;
+-
+-  padding: 30px;
+-
+-  background:
+-    linear-gradient(
+-      135deg,
+-      rgba(14, 116, 144, 0.12),
+-      rgba(15, 23, 42, 0.95)
+-    );
+-
+-  border: 1px solid var(--dia-border);
+-  border-radius: 20px;
+-}
+-
+-.ai-visual {
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-}
+-
+-.ai-ring {
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  width: 190px;
+-  height: 190px;
+-
+-  border-radius: 50%;
+-
+-  border: 1px solid rgba(34, 211, 238, 0.4);
+-
+-  box-shadow:
+-    0 0 45px rgba(34, 211, 238, 0.1),
+-    inset 0 0 30px rgba(34, 211, 238, 0.06);
+-}
+-
+-.ai-center {
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  width: 120px;
+-  height: 120px;
+-
+-  border-radius: 50%;
+-
+-  background: #020617;
+-  border: 1px solid var(--dia-border-light);
+-
+-  color: var(--dia-cyan);
+-
+-  font-size: 15px;
+-  font-weight: 800;
+-  text-align: center;
+-}
+-
+-.ai-content h2 {
+-  margin-bottom: 10px;
+-}
+-
+-.ai-content > p {
+-  max-width: 700px;
+-  line-height: 1.8;
+-}
+-
+-.ai-points {
+-  display: grid;
+-  grid-template-columns: repeat(2, 1fr);
+-  gap: 12px;
+-
+-  margin-top: 20px;
+-}
+-
+-.ai-points > * {
+-  padding: 13px 15px;
+-
+-  background: rgba(2, 6, 23, 0.5);
+-  border: 1px solid var(--dia-border);
+-  border-radius: 10px;
+-}
+-
+-
+-/* ============================================================
+-   PAGE CARDS
+-============================================================ */
+-
+-.pages-grid {
+-  display: grid;
+-  grid-template-columns: repeat(3, 1fr);
+-  gap: 16px;
+-}
+-
+-.page-card {
+-  padding: 22px;
+-
+-  background: var(--dia-card);
+-  border: 1px solid var(--dia-border);
+-  border-radius: var(--dia-radius);
+-
+-  text-decoration: none;
+-
+-  transition: 0.2s ease;
+-}
+-
+-.page-card:hover {
+-  transform: translateY(-3px);
+-  border-color: rgba(34, 211, 238, 0.45);
+-}
+-
+-.page-top {
+-  display: flex;
+-  justify-content: space-between;
+-  gap: 15px;
+-  margin-bottom: 15px;
+-}
+-
+-.page-card h3 {
+-  margin: 0;
+-}
+-
+-.page-card p {
+-  color: var(--dia-muted);
+-  font-size: 13px;
+-  line-height: 1.7;
+-}
+-
+-.dashboard-link {
+-  display: inline-block;
+-  margin-top: 14px;
+-
+-  color: var(--dia-cyan) !important;
+-  font-size: 13px;
+-  font-weight: 700;
+-}
+-
+-
+-/* ============================================================
+-   PURPOSE / FINAL
+-============================================================ */
+-
+-.purpose-section {
+-  padding: 30px;
+-
+-  background: var(--dia-card);
+-  border: 1px solid var(--dia-border);
+-  border-radius: 20px;
+-}
+-
+-.purpose-section p {
+-  max-width: 850px;
+-  line-height: 1.8;
+-}
+-
+-.dashboard-final {
+-  display: flex;
+-  align-items: center;
+-  justify-content: space-between;
+-
+-  gap: 20px;
+-
+-  margin-top: 30px;
+-  padding: 28px;
+-
+-  background:
+-    linear-gradient(
+-      135deg,
+-      #0e7490,
+-      #082f49
+-    );
+-
+-  border-radius: 18px;
+-}
+-
+-.dashboard-disclaimer {
+-  margin-top: 20px;
+-
+-  padding: 15px 18px;
+-
+-  background: rgba(15, 23, 42, 0.7);
+-  border: 1px solid var(--dia-border);
+-
+-  border-radius: 10px;
+-
+-  color: var(--dia-dim);
+-  font-size: 12px;
+-  line-height: 1.6;
+-}
+-
+-
+-/* ============================================================
+-   GENERIC CONTENT CARDS
+-============================================================ */
+-
+-.detection-page > div,
+-.history-page > div,
+-.medications-page > div,
+-.about-page > div {
+-  color: var(--dia-text);
+-}
+-
+-.detection-page .card,
+-.history-page .card,
+-.medications-page .card,
+-.about-page .card {
+-  background: var(--dia-card) !important;
+-  border: 1px solid var(--dia-border) !important;
+-  border-radius: var(--dia-radius) !important;
+-  box-shadow: none !important;
+-}
+-
+-
+-/* ============================================================
+-   FORM CONTROLS
+-============================================================ */
+-
+-.detection-page input,
+-.detection-page select,
+-.detection-page textarea,
+-.medications-page input,
+-.medications-page select,
+-.medications-page textarea,
+-.profile-page input,
+-.profile-page select,
+-.profile-page textarea,
+-.appointments-page input,
+-.appointments-page select,
+-.appointments-page textarea {
+-  background: #020617 !important;
+-  color: var(--dia-text) !important;
+-
+-  border: 1px solid #334155 !important;
+-  border-radius: 10px !important;
+-
+-  outline: none;
+-}
+-
+-.detection-page input:focus,
+-.detection-page select:focus,
+-.detection-page textarea:focus,
+-.medications-page input:focus,
+-.medications-page select:focus,
+-.medications-page textarea:focus,
+-.profile-page input:focus,
+-.profile-page textarea:focus,
+-.appointments-page input:focus,
+-.appointments-page select:focus,
+-.appointments-page textarea:focus {
+-  border-color: var(--dia-cyan) !important;
+-
+-  box-shadow:
+-    0 0 0 3px rgba(34, 211, 238, 0.08) !important;
+-}
+-
+-input::placeholder,
+-textarea::placeholder {
+-  color: #64748b !important;
+-}
+-
+-
+-/* ============================================================
+-   HISTORY
+-============================================================ */
+-
+-.history-page {
+-  color: var(--dia-text);
+-}
+-
+-.history-page table {
+-  width: 100%;
+-  border-collapse: collapse;
+-  background: var(--dia-card);
+-  border: 1px solid var(--dia-border);
+-  border-radius: 14px;
+-  overflow: hidden;
+-}
+-
+-.history-page th {
+-  padding: 14px 16px;
+-  text-align: left;
+-
+-  background: #111827;
+-  color: var(--dia-muted);
+-
+-  font-size: 12px;
+-  text-transform: uppercase;
+-  letter-spacing: 0.5px;
+-}
+-
+-.history-page td {
+-  padding: 15px 16px;
+-
+-  color: var(--dia-text-soft);
+-
+-  border-top: 1px solid var(--dia-border);
+-  font-size: 13px;
+-}
+-
+-.history-page tr:hover td {
+-  background: rgba(34, 211, 238, 0.025);
+-}
+-
+-
+-/* ============================================================
+-   MEDICATIONS
+-============================================================ */
+-
+-.medications-page {
+-  color: var(--dia-text);
+-}
+-
+-.medications-page .medication-card,
+-.medications-page .medicine-card,
+-.medications-page .med-card {
+-  background: var(--dia-card) !important;
+-  border: 1px solid var(--dia-border) !important;
+-  border-radius: var(--dia-radius) !important;
+-  box-shadow: none !important;
+-}
+-
+-.medications-page h3 {
+-  color: var(--dia-text) !important;
+-}
+-
+-.medications-page small,
+-.medications-page span {
+-  color: var(--dia-muted);
+-}
+-
+-
+-/* ============================================================
+-   APPOINTMENTS
+-============================================================ */
+-
+-.appointments-page {
+-  color: var(--dia-text);
+-}
+-
+-.appointments-header h1 {
+-  color: var(--dia-text) !important;
+-}
+-
+-.appointments-header p {
+-  color: var(--dia-muted) !important;
+-}
+-
+-.appointment-card {
+-  background: var(--dia-card) !important;
+-  border: 1px solid var(--dia-border) !important;
+-  box-shadow: none !important;
+-}
+-
+-.appointment-card-header h2 {
+-  color: var(--dia-text) !important;
+-}
+-
+-.appointment-card-header p {
+-  color: var(--dia-muted) !important;
+-}
+-
+-.appointment-form label {
+-  color: var(--dia-text-soft) !important;
+-}
+-
+-.appointment-item {
+-  background: #111827 !important;
+-  border-color: var(--dia-border) !important;
+-}
+-
+-.appointment-doctor h3 {
+-  color: var(--dia-text) !important;
+-}
+-
+-.appointment-doctor p,
+-.appointment-details span,
+-.appointment-notes span,
+-.appointment-notes p {
+-  color: var(--dia-muted) !important;
+-}
+-
+-.appointment-details,
+-.appointment-notes {
+-  border-color: var(--dia-border) !important;
+-}
+-
+-.book-appointment-btn {
+-  background: var(--dia-cyan-dark) !important;
+-}
+-
+-.book-appointment-btn:hover {
+-  background: var(--dia-teal) !important;
+-}
+-
+-
+-/* ============================================================
+-   PROFILE
+-============================================================ */
+-
+-.profile-card {
+-  background: var(--dia-card) !important;
+-  border: 1px solid var(--dia-border) !important;
+-  box-shadow: none !important;
+-}
+-
+-.profile-header h1,
+-.profile-card h2 {
+-  color: var(--dia-text) !important;
+-}
+-
+-.profile-header p,
+-.profile-email,
+-.profile-info-item span,
+-.profile-actions small {
+-  color: var(--dia-muted) !important;
+-}
+-
+-.profile-info-item,
+-.profile-actions a {
+-  background: #111827 !important;
+-  border-color: var(--dia-border) !important;
+-}
+-
+-.profile-actions a:hover {
+-  border-color: var(--dia-cyan) !important;
+-}
+-
+-.profile-role {
+-  background: rgba(34, 211, 238, 0.1) !important;
+-  color: var(--dia-cyan) !important;
+-}
+-
+-
+-/* ============================================================
+-   DOCTOR / ADMIN
+-============================================================ */
+-
+-.doctor-stat-card,
+-.doctor-card {
+-  background: var(--dia-card) !important;
+-  border-color: var(--dia-border) !important;
+-  box-shadow: none !important;
+-}
+-
+-.doctor-header h1,
+-.doctor-card-header h2,
+-.doctor-stat-card strong {
+-  color: var(--dia-text) !important;
+-}
+-
+-.doctor-header p,
+-.doctor-card-header p,
+-.doctor-stat-card span,
+-.doctor-stat-card small {
+-  color: var(--dia-muted) !important;
+-}
+-
+-.doctor-table th {
+-  background: #111827 !important;
+-  color: var(--dia-muted) !important;
+-}
+-
+-.doctor-table td {
+-  color: var(--dia-text-soft) !important;
+-  border-color: var(--dia-border) !important;
+-}
+-
+-.doctor-appointment {
+-  background: #111827 !important;
+-  border-color: var(--dia-border) !important;
+-}
+-
+-
+-/* ============================================================
+-   AUTH PAGES
+-============================================================ */
+-
+-.login-page,
+-.signup-page,
+-.forgot-password-page {
+-  min-height: calc(100vh - 70px);
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  padding: 40px 20px;
+-}
+-
+-.login-card,
+-.signup-card,
+-.forgot-password-card {
+-  width: min(440px, 100%);
+-
+-  padding: 32px;
+-
+-  background: var(--dia-card) !important;
+-  border: 1px solid var(--dia-border) !important;
+-  border-radius: 20px;
+-
+-  box-shadow: var(--dia-shadow);
+-}
+-
+-.login-card input,
+-.signup-card input,
+-.forgot-password-card input {
+-  background: #020617 !important;
+-  color: var(--dia-text) !important;
+-  border-color: #334155 !important;
+-}
+-
+-
+-/* ============================================================
+-   STATUS COLORS
+-============================================================ */
+-
+-.status-success,
+-.result-positive,
+-.safe {
+-  color: var(--dia-success) !important;
+-}
+-
+-.status-danger,
+-.result-negative,
+-.danger {
+-  color: var(--dia-danger) !important;
+-}
+-
+-.status-warning {
+-  color: var(--dia-warning) !important;
+-}
+-
+-
+-/* ============================================================
+-   SCROLLBAR
+-============================================================ */
+-
+-::-webkit-scrollbar {
+-  width: 8px;
+-}
+-
+-::-webkit-scrollbar-track {
+-  background: #020617;
+-}
+-
+-::-webkit-scrollbar-thumb {
+-  background: #1e293b;
+-  border-radius: 20px;
+-}
+-
+-::-webkit-scrollbar-thumb:hover {
+-  background: #334155;
+-}
+-
+-
+-/* ============================================================
+-   RESPONSIVE
+-============================================================ */
+-
+-@media (max-width: 1000px) {
+-
+-  .dashboard-hero {
+-    grid-template-columns: 1fr;
+-    padding: 38px;
+-  }
+-
+-  .hero-retina {
+-    min-height: 260px;
+-  }
+-
+-  .overview-grid {
+-    grid-template-columns: repeat(2, 1fr);
+-  }
+-
+-  .workflow-grid {
+-    grid-template-columns: 1fr;
+-  }
+-
+-  .pages-grid {
+-    grid-template-columns: repeat(2, 1fr);
+-  }
+-
+-  .ai-overview {
+-    grid-template-columns: 1fr;
+-  }
+-}
+-
+-
+-@media (max-width: 700px) {
+-
+-  .diairis-dashboard,
+-  .detection-page,
+-  .history-page,
+-  .medications-page,
+-  .about-page,
+-  .profile-page,
+-  .appointments-page,
+-  .doctor-page {
+-    width: min(100% - 28px, 600px);
+-    padding-top: 25px;
+-  }
+-
+-  .dashboard-hero {
+-    padding: 28px 22px;
+-    border-radius: 18px;
+-  }
+-
+-  .hero-left h1 {
+-    font-size: 38px;
+-    letter-spacing: -1px;
+-  }
+-
+-  .hero-description {
+-    font-size: 14px;
+-  }
+-
+-  .overview-grid {
+-    grid-template-columns: 1fr;
+-  }
+-
+-  .pages-grid {
+-    grid-template-columns: 1fr;
+-  }
+-
+-  .ai-points {
+-    grid-template-columns: 1fr;
+-  }
+-
+-  .dashboard-final {
+-    flex-direction: column;
+-    align-items: flex-start;
+-  }
+-
+-  .purpose-section,
+-  .ai-overview {
+-    padding: 22px;
+-  }
+-}
+-
+-
+-@media (max-width: 480px) {
+-
+-  .diairis-dashboard,
+-  .detection-page,
+-  .history-page,
+-  .medications-page,
+-  .about-page,
+-  .profile-page,
+-  .appointments-page,
+-  .doctor-page {
+-    width: calc(100% - 20px);
+-  }
+-
+-  .dashboard-hero {
+-    padding: 24px 18px;
+-  }
+-
+-  .hero-buttons {
+-    flex-direction: column;
+-  }
+-
+-  .hero-primary,
+-  .hero-secondary {
+-    width: 100%;
+-  }
+-
+-  .retina-core {
+-    width: 175px;
+-    height: 175px;
+-  }
+-
+-  .retina-glow {
+-    width: 220px;
+-    height: 220px;
+-  }
+-}
+-/* =========================================================
+-   DIAIRIS — EYE SCREENING / DETECTION PAGE
+-   ========================================================= */
+-
+-.detection-page {
+-  width: 100%;
+-  max-width: 1180px;
+-  margin: 0 auto;
+-  padding: 34px 24px 60px;
+-  color: #e2e8f0;
+-}
+-
+-/* ---------- PAGE HEADER ---------- */
+-
+-.detection-header {
+-  margin-bottom: 26px;
+-}
+-
+-.detection-kicker {
+-  margin-bottom: 7px;
+-  color: #22d3ee;
+-  font-size: 11px;
+-  font-weight: 700;
+-  letter-spacing: 0.14em;
+-  text-transform: uppercase;
+-}
+-
+-.detection-header h1 {
+-  margin: 0;
+-  color: #f8fafc;
+-  font-size: 30px;
+-  font-weight: 750;
+-  letter-spacing: -0.02em;
+-}
+-
+-.detection-header p {
+-  max-width: 720px;
+-  margin: 9px 0 0;
+-  color: #94a3b8;
+-  font-size: 14px;
+-  line-height: 1.7;
+-}
+-
+-/* ---------- MAIN SCREENING CARD ---------- */
+-
+-.detection-card {
+-  padding: 28px;
+-
+-  background:
+-    radial-gradient(
+-      circle at 100% 0%,
+-      rgba(34, 211, 238, 0.08),
+-      transparent 35%
+-    ),
+-    #0f172a;
+-
+-  border: 1px solid #1e3a52;
+-  border-radius: 20px;
+-
+-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+-}
+-
+-/* ---------- UPLOAD AREA ---------- */
+-
+-.detection-upload {
+-  position: relative;
+-
+-  min-height: 270px;
+-  padding: 35px 25px;
+-
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-  text-align: center;
+-
+-  background: #071525;
+-
+-  border: 1px dashed rgba(34, 211, 238, 0.45);
+-  border-radius: 16px;
+-
+-  transition: 0.25s ease;
+-}
+-
+-.detection-upload:hover {
+-  border-color: #22d3ee;
+-  background: #091b2d;
+-}
+-
+-.detection-upload-content {
+-  max-width: 520px;
+-}
+-
+-.detection-upload-icon {
+-  width: 62px;
+-  height: 62px;
+-
+-  margin: 0 auto 15px;
+-
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  border-radius: 18px;
+-
+-  background: rgba(34, 211, 238, 0.09);
+-  border: 1px solid rgba(34, 211, 238, 0.22);
+-
+-  color: #22d3ee;
+-  font-size: 26px;
+-}
+-
+-.detection-upload h2 {
+-  margin: 0 0 8px;
+-
+-  color: #f1f5f9;
+-  font-size: 20px;
+-}
+-
+-.detection-upload p {
+-  margin: 0;
+-
+-  color: #64748b;
+-  font-size: 13px;
+-  line-height: 1.6;
+-}
+-
+-.detection-upload input[type="file"] {
+-  display: none;
+-}
+-
+-/* ---------- UPLOAD BUTTON ---------- */
+-
+-.detection-upload-button {
+-  display: inline-flex;
+-  align-items: center;
+-  justify-content: center;
+-
+-  margin-top: 20px;
+-  padding: 11px 20px;
+-
+-  color: #001018;
+-  background: #22d3ee;
+-
+-  border: none;
+-  border-radius: 10px;
+-
+-  font-size: 13px;
+-  font-weight: 700;
+-
+-  cursor: pointer;
+-  transition: 0.2s ease;
+-}
+-
+-.detection-upload-button:hover {
+-  background: #67e8f9;
+-  transform: translateY(-1px);
+-}
+-
+-/* ---------- PREVIEW ---------- */
+-
+-.detection-preview {
+-  margin-top: 22px;
+-  padding: 20px;
+-
+-  background: #071525;
+-  border: 1px solid #1e3a52;
+-  border-radius: 15px;
+-}
+-
+-.detection-preview-title {
+-  display: flex;
+-  align-items: center;
+-  justify-content: space-between;
+-
+-  margin-bottom: 14px;
+-}
+-
+-.detection-preview-title h3 {
+-  margin: 0;
+-
+-  color: #e2e8f0;
+-  font-size: 15px;
+-}
+-
+-.detection-preview-title span {
+-  color: #64748b;
+-  font-size: 11px;
+-}
+-
+-.detection-preview img {
+-  display: block;
+-
+-  width: 100%;
+-  max-height: 430px;
+-
+-  object-fit: contain;
+-
+-  background: #020b16;
+-  border: 1px solid #1e293b;
+-  border-radius: 12px;
+-}
+-
+-/* ---------- SCREEN BUTTON ---------- */
+-
+-.detection-action {
+-  display: flex;
+-  justify-content: center;
+-
+-  margin-top: 22px;
+-}
+-
+-.detection-screen-button {
+-  min-width: 190px;
+-  padding: 13px 24px;
+-
+-  color: #001018;
+-  background: #22d3ee;
+-
+-  border: none;
+-  border-radius: 11px;
+-
+-  font-size: 14px;
+-  font-weight: 700;
+-
+-  cursor: pointer;
+-  transition: 0.2s ease;
+-}
+-
+-.detection-screen-button:hover {
+-  background: #67e8f9;
+-  transform: translateY(-1px);
+-}
+-
+-.detection-screen-button:disabled {
+-  opacity: 0.5;
+-  cursor: not-allowed;
+-  transform: none;
+-}
+-
+-/* ---------- PROCESSING ---------- */
+-
+-.detection-processing {
+-  margin-top: 22px;
+-  padding: 20px;
+-
+-  text-align: center;
+-
+-  background: #071525;
+-  border: 1px solid rgba(34, 211, 238, 0.18);
+-  border-radius: 14px;
+-}
+-
+-.detection-processing h3 {
+-  margin: 0 0 6px;
+-
+-  color: #22d3ee;
+-  font-size: 15px;
+-}
+-
+-.detection-processing p {
+-  margin: 0;
+-
+-  color: #64748b;
+-  font-size: 12px;
+-}
+-
+-/* ---------- RESULT ---------- */
+-
+-.detection-result {
+-  margin-top: 26px;
+-  padding: 25px;
+-
+-  background: #0b1628;
+-  border: 1px solid rgba(34, 211, 238, 0.28);
+-  border-radius: 18px;
+-
+-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+-}
+-
+-.detection-result-header {
+-  display: flex;
+-  align-items: center;
+-  justify-content: space-between;
+-
+-  margin-bottom: 20px;
+-  padding-bottom: 14px;
+-
+-  border-bottom: 1px solid #1e293b;
+-}
+-
+-.detection-result-header h2 {
+-  margin: 0;
+-
+-  color: #f8fafc;
+-  font-size: 19px;
+-}
+-
+-.detection-result-badge {
+-  padding: 6px 12px;
+-
+-  border-radius: 999px;
+-
+-  background: rgba(34, 211, 238, 0.1);
+-  border: 1px solid rgba(34, 211, 238, 0.25);
+-
+-  color: #22d3ee;
+-  font-size: 11px;
+-  font-weight: 700;
+-}
+-
+-/* ---------- RESULT CONTENT ---------- */
+-
+-.detection-result-grid {
+-  display: grid;
+-  grid-template-columns: 1fr 1fr;
+-  gap: 20px;
+-}
+-
+-.detection-result-image {
+-  overflow: hidden;
+-
+-  background: #020b16;
+-  border: 1px solid #1e3a52;
+-  border-radius: 14px;
+-}
+-
+-.detection-result-image img {
+-  display: block;
+-
+-  width: 100%;
+-  height: 330px;
+-
+-  object-fit: contain;
+-}
+-
+-.detection-result-info {
+-  display: flex;
+-  flex-direction: column;
+-  justify-content: center;
+-
+-  padding: 10px;
+-}
+-
+-.detection-result-label {
+-  margin-bottom: 7px;
+-
+-  color: #64748b;
+-  font-size: 11px;
+-  font-weight: 700;
+-  text-transform: uppercase;
+-  letter-spacing: 0.1em;
+-}
+-
+-.detection-result-title {
+-  margin: 0;
+-
+-  color: #f8fafc;
+-  font-size: 27px;
+-  font-weight: 750;
+-}
+-
+-.detection-result-confidence {
+-  margin-top: 20px;
+-  padding: 16px;
+-
+-  background: #071525;
+-  border: 1px solid #1e3a52;
+-  border-radius: 12px;
+-}
+-
+-.detection-result-confidence span {
+-  display: block;
+-
+-  color: #64748b;
+-  font-size: 11px;
+-  text-transform: uppercase;
+-  letter-spacing: 0.08em;
+-}
+-
+-.detection-result-confidence strong {
+-  display: block;
+-  margin-top: 5px;
+-
+-  color: #22d3ee;
+-  font-size: 24px;
+-}
+-
+-/* ---------- HEATMAP ---------- */
+-
+-.detection-heatmap {
+-  margin-top: 20px;
+-  padding-top: 20px;
+-
+-  border-top: 1px solid #1e293b;
+-}
+-
+-.detection-heatmap h3 {
+-  margin: 0 0 12px;
+-
+-  color: #e2e8f0;
+-  font-size: 15px;
+-}
+-
+-.detection-heatmap p {
+-  margin: 0 0 15px;
+-
+-  color: #64748b;
+-  font-size: 12px;
+-  line-height: 1.6;
+-}
+-
+-.detection-heatmap img {
+-  display: block;
+-
+-  width: 100%;
+-  max-height: 420px;
+-
+-  object-fit: contain;
+-
+-  background: #020b16;
+-  border: 1px solid #1e3a52;
+-  border-radius: 12px;
+-}
+-
+-/* ---------- MEDICAL NOTE ---------- */
+-
+-.detection-note {
+-  margin-top: 24px;
+-  padding: 17px 19px;
+-
+-  background: rgba(14, 116, 144, 0.07);
+-  border: 1px solid rgba(34, 211, 238, 0.17);
+-  border-left: 3px solid #22d3ee;
+-
+-  border-radius: 11px;
+-
+-  color: #94a3b8;
+-  font-size: 12px;
+-  line-height: 1.7;
+-}
+-
+-.detection-note strong {
+-  color: #22d3ee;
+-}
+-
+-/* ---------- ERROR ---------- */
+-
+-.detection-error {
+-  margin-top: 18px;
+-  padding: 13px 16px;
+-
+-  color: #fca5a5;
+-  background: rgba(127, 29, 29, 0.16);
+-
+-  border: 1px solid rgba(248, 113, 113, 0.25);
+-  border-radius: 10px;
+-
+-  font-size: 13px;
+-}
+-
+-/* ---------- MOBILE ---------- */
+-
+-@media (max-width: 800px) {
+-
+-  .detection-page {
+-    padding: 22px 14px 45px;
+-  }
+-
+-  .detection-header h1 {
+-    font-size: 25px;
+-  }
+-
+-  .detection-card {
+-    padding: 18px;
+-  }
+-
+-  .detection-upload {
+-    min-height: 230px;
+-    padding: 25px 15px;
+-  }
+-
+-  .detection-result-grid {
+-    grid-template-columns: 1fr;
+-  }
+-
+-  .detection-result-image img {
+-    height: 270px;
+-  }
+-
+-  .detection-result-header {
+-    align-items: flex-start;
+-    flex-direction: column;
+-    gap: 10px;
+-  }
+-}
+diff --git a/src/App.jsx b/src/App.jsx
+index b0a9108..f749ac3 100644
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -251,4 +251,4 @@ return ( <AuthProvider> <BrowserRouter> <Navbar />
+ );
+ }
+ 
+-export default App
++export default App
+\ No newline at end of file
+diff --git a/src/pages/AdminDashboard.jsx b/src/pages/AdminDashboard.jsx
+index 67fd7b4..e69de29 100644
+--- a/src/pages/AdminDashboard.jsx
++++ b/src/pages/AdminDashboard.jsx
+@@ -1,329 +0,0 @@
+-import { useEffect, useState } from "react";
+-import { Link } from "react-router-dom";
+-import {
+-  getAdminStats,
+-  getPatients,
+-  assignMedication,
+-} from "../api";
+-
+-function AdminDashboard() {
+-  const [stats, setStats] = useState({});
+-  const [patients, setPatients] = useState([]);
+-
+-  const [form, setForm] = useState({
+-    patient_id: "",
+-    name: "",
+-    dosage: "",
+-    time_of_day: "",
+-    notes: "",
+-  });
+-
+-  const [message, setMessage] = useState("");
+-  const [error, setError] = useState("");
+-
+-  useEffect(() => {
+-    loadData();
+-  }, []);
+-
+-  async function loadData() {
+-    try {
+-      const [statsData, patientsData] = await Promise.all([
+-        getAdminStats(),
+-        getPatients(),
+-      ]);
+-
+-      setStats(statsData);
+-      setPatients(patientsData);
+-    } catch (err) {
+-      console.error(err);
+-      setError("Unable to load admin dashboard.");
+-    }
+-  }
+-
+-  async function handleMedication(e) {
+-    e.preventDefault();
+-
+-    setMessage("");
+-    setError("");
+-
+-    if (!form.patient_id || !form.name || !form.dosage || !form.time_of_day) {
+-      setError("Please fill all required medication fields.");
+-      return;
+-    }
+-
+-    try {
+-      await assignMedication({
+-        patient_id: Number(form.patient_id),
+-        name: form.name,
+-        dosage: form.dosage,
+-        time_of_day: form.time_of_day,
+-        notes: form.notes,
+-      });
+-
+-      setMessage("Medication assigned successfully.");
+-
+-      setForm({
+-        patient_id: "",
+-        name: "",
+-        dosage: "",
+-        time_of_day: "",
+-        notes: "",
+-      });
+-    } catch (err) {
+-      console.error(err);
+-      setError("Failed to assign medication.");
+-    }
+-  }
+-
+-  return (
+-    <div className="admin-dashboard">
+-
+-      {/* HEADER */}
+-      <header className="admin-topbar">
+-        <div>
+-          <div className="admin-kicker">DIAIRIS ADMIN</div>
+-          <h1>Admin Dashboard</h1>
+-          <p>Manage patients, screenings, appointments and medications.</p>
+-        </div>
+-
+-        <Link to="/" className="admin-home-btn">
+-          Back to Website
+-        </Link>
+-      </header>
+-
+-      {/* STATS */}
+-      <section className="admin-stat-grid">
+-
+-        <div className="admin-stat">
+-          <span>Total Patients</span>
+-          <strong>{stats.total_patients ?? 0}</strong>
+-        </div>
+-
+-        <div className="admin-stat">
+-          <span>Total Screenings</span>
+-          <strong>{stats.total_scans ?? 0}</strong>
+-        </div>
+-
+-        <div className="admin-stat">
+-          <span>DR Positive</span>
+-          <strong>{stats.dr_positive_scans ?? 0}</strong>
+-        </div>
+-
+-        <div className="admin-stat">
+-          <span>Appointments</span>
+-          <strong>{stats.total_appointments ?? 0}</strong>
+-        </div>
+-
+-        <div className="admin-stat">
+-          <span>Medications</span>
+-          <strong>{stats.total_medications ?? 0}</strong>
+-        </div>
+-
+-      </section>
+-
+-      {/* MANAGEMENT */}
+-      <section className="admin-section">
+-
+-        <div className="admin-section-title">
+-          <h2>Management</h2>
+-          <p>Open an area to manage DIAIRIS data.</p>
+-        </div>
+-
+-        <div className="admin-management-grid">
+-
+-          <Link to="/admin/patients" className="admin-management-card">
+-            <div className="admin-card-number">01</div>
+-            <h3>Patients</h3>
+-            <p>View registered patients and their details.</p>
+-          </Link>
+-
+-          <Link to="/admin/screenings" className="admin-management-card">
+-            <div className="admin-card-number">02</div>
+-            <h3>Screenings</h3>
+-            <p>View retinal screening results and confidence.</p>
+-          </Link>
+-
+-          <Link to="/admin/appointments" className="admin-management-card">
+-            <div className="admin-card-number">03</div>
+-            <h3>Appointments</h3>
+-            <p>View and manage patient appointments.</p>
+-          </Link>
+-
+-          <Link to="/admin/medications" className="admin-management-card">
+-            <div className="admin-card-number">04</div>
+-            <h3>Medications</h3>
+-            <p>Assign medication and send patient information.</p>
+-          </Link>
+-
+-        </div>
+-
+-      </section>
+-
+-      {/* PATIENTS */}
+-      <section className="admin-section">
+-
+-        <div className="admin-section-title">
+-          <h2>Registered Patients</h2>
+-          <p>Recently available patient accounts.</p>
+-        </div>
+-
+-        {patients.length === 0 ? (
+-          <div className="admin-empty">
+-            No patients found.
+-          </div>
+-        ) : (
+-          <div className="admin-table-container">
+-
+-            <table className="admin-table">
+-
+-              <thead>
+-                <tr>
+-                  <th>ID</th>
+-                  <th>Name</th>
+-                  <th>Email</th>
+-                  <th>Phone</th>
+-                </tr>
+-              </thead>
+-
+-              <tbody>
+-                {patients.map((patient) => (
+-                  <tr key={patient.id}>
+-                    <td>{patient.id}</td>
+-                    <td>{patient.name}</td>
+-                    <td>{patient.email}</td>
+-                    <td>{patient.phone || "Not provided"}</td>
+-                  </tr>
+-                ))}
+-              </tbody>
+-
+-            </table>
+-
+-          </div>
+-        )}
+-
+-      </section>
+-
+-      {/* MEDICATION */}
+-      <section className="admin-section">
+-
+-        <div className="admin-section-title">
+-          <h2>Quick Medication Assignment</h2>
+-          <p>Assign medication directly from the dashboard.</p>
+-        </div>
+-
+-        {message && (
+-          <div className="admin-message success">
+-            {message}
+-          </div>
+-        )}
+-
+-        {error && (
+-          <div className="admin-message error">
+-            {error}
+-          </div>
+-        )}
+-
+-        <form
+-          className="admin-medication-form"
+-          onSubmit={handleMedication}
+-        >
+-
+-          <div className="admin-field">
+-            <label>Patient</label>
+-
+-            <select
+-              value={form.patient_id}
+-              onChange={(e) =>
+-                setForm({
+-                  ...form,
+-                  patient_id: e.target.value,
+-                })
+-              }
+-            >
+-              <option value="">Select patient</option>
+-
+-              {patients.map((patient) => (
+-                <option key={patient.id} value={patient.id}>
+-                  {patient.name} — {patient.email}
+-                </option>
+-              ))}
+-            </select>
+-          </div>
+-
+-          <div className="admin-field">
+-            <label>Medication Name</label>
+-
+-            <input
+-              type="text"
+-              placeholder="Medication name"
+-              value={form.name}
+-              onChange={(e) =>
+-                setForm({
+-                  ...form,
+-                  name: e.target.value,
+-                })
+-              }
+-            />
+-          </div>
+-
+-          <div className="admin-field">
+-            <label>Dosage</label>
+-
+-            <input
+-              type="text"
+-              placeholder="Example: 1 tablet"
+-              value={form.dosage}
+-              onChange={(e) =>
+-                setForm({
+-                  ...form,
+-                  dosage: e.target.value,
+-                })
+-              }
+-            />
+-          </div>
+-
+-          <div className="admin-field">
+-            <label>Time</label>
+-
+-            <input
+-              type="time"
+-              value={form.time_of_day}
+-              onChange={(e) =>
+-                setForm({
+-                  ...form,
+-                  time_of_day: e.target.value,
+-                })
+-              }
+-            />
+-          </div>
+-
+-          <div className="admin-field admin-full">
+-            <label>Notes</label>
+-
+-            <textarea
+-              placeholder="Instructions or notes"
+-              value={form.notes}
+-              onChange={(e) =>
+-                setForm({
+-                  ...form,
+-                  notes: e.target.value,
+-                })
+-              }
+-            />
+-          </div>
+-
+-          <div className="admin-full">
+-            <button type="submit" className="admin-submit">
+-              Assign Medication
+-            </button>
+-          </div>
+-
+-        </form>
+-
+-      </section>
+-
+-    </div>
+-  );
+-}
+-
+-export default AdminDashboard;
+\ No newline at end of file
+diff --git a/src/pages/DoctorDashboard.jsx b/src/pages/DoctorDashboard.jsx
+index 68b7fb9..a02c3bc 100644
+--- a/src/pages/DoctorDashboard.jsx
++++ b/src/pages/DoctorDashboard.jsx
+@@ -1,30 +1,12 @@
+-
+ import { useEffect, useState } from 'react'
+ import { Link } from 'react-router-dom'
+-import {
+-  getScans,
+-  getAppointments,
+-  getPatients,
+-  assignMedication
+-} from '../api'
++import { getScans, getAppointments } from '../api'
+ 
+ function DoctorDashboard() {
+   const [scans, setScans] = useState([])
+   const [appointments, setAppointments] = useState([])
+-  const [patients, setPatients] = useState([])
+-
+   const [loading, setLoading] = useState(true)
+-  const [medicationSaving, setMedicationSaving] = useState(false)
+-
+   const [error, setError] = useState('')
+-  const [medicationMessage, setMedicationMessage] = useState('')
+-
+-  // Medication form
+-  const [patientId, setPatientId] = useState('')
+-  const [medicationName, setMedicationName] = useState('')
+-  const [dosage, setDosage] = useState('')
+-  const [timeOfDay, setTimeOfDay] = useState('')
+-  const [notes, setNotes] = useState('')
+ 
+   useEffect(() => {
+     loadDoctorData()
+@@ -35,12 +17,10 @@ function DoctorDashboard() {
+       setLoading(true)
+       setError('')
+ 
+-      const [scanData, appointmentData, patientData] =
+-        await Promise.all([
+-          getScans(),
+-          getAppointments(),
+-          getPatients()
+-        ])
++      const [scanData, appointmentData] = await Promise.all([
++        getScans(),
++        getAppointments()
++      ])
+ 
+       if (Array.isArray(scanData)) {
+         setScans(scanData)
+@@ -54,11 +34,6 @@ function DoctorDashboard() {
+         setAppointments(appointmentData.appointments)
+       }
+ 
+-      if (Array.isArray(patientData)) {
+-        setPatients(patientData)
+-      } else if (Array.isArray(patientData.patients)) {
+-        setPatients(patientData.patients)
+-      }
+     } catch (err) {
+       setError(
+         err.message || 'Failed to load doctor dashboard'
+@@ -68,62 +43,6 @@ function DoctorDashboard() {
+     }
+   }
+ 
+-  const handleMedicationSubmit = async (event) => {
+-    event.preventDefault()
+-
+-    setMedicationMessage('')
+-    setError('')
+-
+-    if (!patientId) {
+-      setError('Please select a patient.')
+-      return
+-    }
+-
+-    if (!medicationName.trim()) {
+-      setError('Please enter the medication name.')
+-      return
+-    }
+-
+-    if (!dosage.trim()) {
+-      setError('Please enter the dosage.')
+-      return
+-    }
+-
+-    if (!timeOfDay) {
+-      setError('Please select the medication time.')
+-      return
+-    }
+-
+-    try {
+-      setMedicationSaving(true)
+-
+-      const result = await assignMedication(
+-        patientId,
+-        medicationName.trim(),
+-        dosage.trim(),
+-        timeOfDay,
+-        notes.trim()
+-      )
+-
+-      setMedicationMessage(
+-        result.message ||
+-        'Medication assigned successfully. Patient notification sent.'
+-      )
+-
+-      setPatientId('')
+-      setMedicationName('')
+-      setDosage('')
+-      setTimeOfDay('')
+-      setNotes('')
+-    } catch (err) {
+-      setError(
+-        err.message || 'Failed to assign medication'
+-      )
+-    } finally {
+-      setMedicationSaving(false)
+-    }
+-  }
+-
+   const getResult = (scan) => {
+     return String(
+       scan.result ||
+@@ -208,25 +127,12 @@ function DoctorDashboard() {
+         </button>
+       </div>
+ 
+-
+-      {/* ERROR */}
+-
+       {error && (
+         <div className="doctor-error">
+           {error}
+         </div>
+       )}
+ 
+-
+-      {/* SUCCESS */}
+-
+-      {medicationMessage && (
+-        <div className="doctor-success">
+-          {medicationMessage}
+-        </div>
+-      )}
+-
+-
+       {/* STAT CARDS */}
+ 
+       <div className="doctor-stats">
+@@ -257,147 +163,6 @@ function DoctorDashboard() {
+ 
+       </div>
+ 
+-
+-      {/* MEDICATION ASSIGNMENT */}
+-
+-      <div className="doctor-card doctor-medication-card">
+-
+-        <div className="doctor-card-header">
+-          <div>
+-            <h2>Assign Medication</h2>
+-
+-            <p>
+-              Add medication instructions prescribed
+-              for a registered patient.
+-            </p>
+-          </div>
+-        </div>
+-
+-        <form
+-          className="doctor-medication-form"
+-          onSubmit={handleMedicationSubmit}
+-        >
+-
+-          <div className="doctor-form-group">
+-            <label>
+-              Select Patient
+-            </label>
+-
+-            <select
+-              value={patientId}
+-              onChange={(e) =>
+-                setPatientId(e.target.value)
+-              }
+-            >
+-              <option value="">
+-                Select a patient
+-              </option>
+-
+-              {patients.map((patient) => (
+-                <option
+-                  key={patient.id}
+-                  value={patient.id}
+-                >
+-                  {patient.name} — {patient.email}
+-                </option>
+-              ))}
+-            </select>
+-          </div>
+-
+-
+-          <div className="doctor-form-row">
+-
+-            <div className="doctor-form-group">
+-              <label>
+-                Medication Name
+-              </label>
+-
+-              <input
+-                type="text"
+-                placeholder="Enter prescribed medication"
+-                value={medicationName}
+-                onChange={(e) =>
+-                  setMedicationName(e.target.value)
+-                }
+-              />
+-            </div>
+-
+-
+-            <div className="doctor-form-group">
+-              <label>
+-                Dosage
+-              </label>
+-
+-              <input
+-                type="text"
+-                placeholder="Example: 1 tablet"
+-                value={dosage}
+-                onChange={(e) =>
+-                  setDosage(e.target.value)
+-                }
+-              />
+-            </div>
+-
+-          </div>
+-
+-
+-          <div className="doctor-form-row">
+-
+-            <div className="doctor-form-group">
+-              <label>
+-                Scheduled Time
+-              </label>
+-
+-              <input
+-                type="time"
+-                value={timeOfDay}
+-                onChange={(e) =>
+-                  setTimeOfDay(e.target.value)
+-                }
+-              />
+-            </div>
+-
+-
+-            <div className="doctor-form-group">
+-              <label>
+-                Notes / Instructions
+-              </label>
+-
+-              <input
+-                type="text"
+-                placeholder="Example: Take after food"
+-                value={notes}
+-                onChange={(e) =>
+-                  setNotes(e.target.value)
+-                }
+-              />
+-            </div>
+-
+-          </div>
+-
+-
+-          <button
+-            type="submit"
+-            className="doctor-medication-btn"
+-            disabled={medicationSaving}
+-          >
+-            {medicationSaving
+-              ? 'Assigning...'
+-              : 'Assign Medication'}
+-          </button>
+-
+-        </form>
+-
+-        <div className="doctor-medication-note">
+-          Medication information should be entered according
+-          to the prescription or instructions provided by a
+-          qualified healthcare professional. DIAIRIS does not
+-          prescribe medication.
+-        </div>
+-
+-      </div>
+-
+-
+       {/* MAIN CONTENT */}
+ 
+       <div className="doctor-grid">
+@@ -407,10 +172,8 @@ function DoctorDashboard() {
+         <div className="doctor-card doctor-screenings">
+ 
+           <div className="doctor-card-header">
+-
+             <div>
+               <h2>Recent Screenings</h2>
+-
+               <p>
+                 AI-assisted retinal screening results.
+               </p>
+@@ -419,18 +182,13 @@ function DoctorDashboard() {
+             <Link to="/history">
+               View History
+             </Link>
+-
+           </div>
+ 
+-
+           {scans.length === 0 ? (
+-
+             <div className="doctor-empty">
+               No screening records available.
+             </div>
+-
+           ) : (
+-
+             <div className="doctor-table-wrapper">
+ 
+               <table className="doctor-table">
+@@ -446,95 +204,81 @@ function DoctorDashboard() {
+ 
+                 <tbody>
+ 
+-                  {scans.slice(0, 8).map(
+-                    (scan, index) => {
+-
+-                      const detected =
+-                        isDRDetected(scan)
+-
+-                      const confidence =
+-                        getConfidence(scan)
+-
+-                      const scanId =
+-                        scan.id ||
+-                        scan.scan_id ||
+-                        scan._id
+-
+-                      return (
+-                        <tr
+-                          key={scanId || index}
+-                        >
+-
+-                          <td>
++                  {scans.slice(0, 8).map((scan, index) => {
++
++                    const detected =
++                      isDRDetected(scan)
++
++                    const confidence =
++                      getConfidence(scan)
++
++                    const scanId =
++                      scan.id ||
++                      scan.scan_id ||
++                      scan._id
++
++                    return (
++                      <tr key={scanId || index}>
++
++                        <td>
++                          <span
++                            className={
++                              detected
++                                ? 'doctor-result danger'
++                                : 'doctor-result safe'
++                            }
++                          >
++                            {detected
++                              ? 'DR Detected'
++                              : 'No DR Detected'}
++                          </span>
++                        </td>
++
++                        <td>
++                          {confidence.toFixed(1)}%
++                        </td>
++
++                        <td>
++                          {getDate(
++                            scan.created_at ||
++                            scan.date ||
++                            scan.timestamp
++                          )}
++                        </td>
+ 
+-                            <span
+-                              className={
+-                                detected
+-                                  ? 'doctor-result danger'
+-                                  : 'doctor-result safe'
+-                              }
++                        <td>
++                          {scanId ? (
++                            <Link
++                              to={`/report/${scanId}`}
++                              className="doctor-view-btn"
+                             >
+-                              {detected
+-                                ? 'DR Detected'
+-                                : 'No DR Detected'}
+-                            </span>
+-
+-                          </td>
+-
+-                          <td>
+-                            {confidence.toFixed(1)}%
+-                          </td>
+-
+-                          <td>
+-                            {getDate(
+-                              scan.created_at ||
+-                              scan.date ||
+-                              scan.timestamp
+-                            )}
+-                          </td>
+-
+-                          <td>
+-
+-                            {scanId ? (
+-
+-                              <Link
+-                                to={`/report/${scanId}`}
+-                                className="doctor-view-btn"
+-                              >
+-                                View Report
+-                              </Link>
+-
+-                            ) : (
+-                              '—'
+-                            )}
+-
+-                          </td>
++                              View Report
++                            </Link>
++                          ) : (
++                            '—'
++                          )}
++                        </td>
+ 
+-                        </tr>
+-                      )
+-                    }
+-                  )}
++                      </tr>
++                    )
++                  })}
+ 
+                 </tbody>
+ 
+               </table>
+ 
+             </div>
+-
+           )}
+ 
+         </div>
+ 
+-
+         {/* APPOINTMENTS */}
+ 
+         <div className="doctor-card">
+ 
+           <div className="doctor-card-header">
+-
+             <div>
+               <h2>Appointments</h2>
+-
+               <p>
+                 Scheduled patient consultations.
+               </p>
+@@ -543,18 +287,13 @@ function DoctorDashboard() {
+             <Link to="/appointments">
+               Manage
+             </Link>
+-
+           </div>
+ 
+-
+           {appointments.length === 0 ? (
+-
+             <div className="doctor-empty">
+               No appointments scheduled.
+             </div>
+-
+           ) : (
+-
+             <div className="doctor-appointments">
+ 
+               {appointments.slice(0, 6).map(
+@@ -566,7 +305,6 @@ function DoctorDashboard() {
+                     index
+ 
+                   return (
+-
+                     <div
+                       className="doctor-appointment"
+                       key={id}
+@@ -597,24 +335,20 @@ function DoctorDashboard() {
+                       </span>
+ 
+                     </div>
+-
+                   )
+                 }
+               )}
+ 
+             </div>
+-
+           )}
+ 
+         </div>
+ 
+       </div>
+ 
+-
+       {/* MEDICAL NOTICE */}
+ 
+       <div className="doctor-notice">
+-
+         <strong>Clinical Review Notice</strong>
+ 
+         <p>
+@@ -625,12 +359,10 @@ function DoctorDashboard() {
+           clinical decisions using appropriate examination
+           and patient information.
+         </p>
+-
+       </div>
+ 
+     </div>
+   )
+ }
+ 
+-export default DoctorDashboard
+-
++export default DoctorDashboard
+\ No newline at end of file
